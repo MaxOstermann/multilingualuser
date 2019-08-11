@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
-from .managers import MultilingualUserManager
+from user.managers import MultilingualUserManager
 
 
 class MultilingualUser(AbstractBaseUser, PermissionsMixin):
@@ -23,9 +23,3 @@ class MultilingualUser(AbstractBaseUser, PermissionsMixin):
 class Language(models.Model):
     first_name = models.CharField(max_length=100)
     language_code = models.CharField(max_length=10)
-
-
-# - название
-# языка
-# - код
-# языка
