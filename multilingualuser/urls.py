@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.conf.urls import include, url
+from django.urls import path
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^user/', include('user.urls')),
-]
+urlpatterns = i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('user/', include('user.urls')),
+)

@@ -14,7 +14,6 @@ class MultilingualUser(AbstractBaseUser, PermissionsMixin):
     position = models.CharField(_('position'), max_length=100)
     image_id = models.ImageField(_('image id'), upload_to="multilingualuser/photos")
 
-
     objects = MultilingualUserManager()
 
     USERNAME_FIELD = 'username'

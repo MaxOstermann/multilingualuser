@@ -1,6 +1,15 @@
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from user.models import MultilingualUser
+from user.serializers import MultilingualUserSerializer
+
+
+@api_view(['GET'])
+def user_list_api(request):
+    comments = MultilingualUser.objects.all()
+    serializer = MultilingualUserSerializer(comments, many=True)
+    return Response(serializer.data)
 
 
 @api_view(['POST'])
