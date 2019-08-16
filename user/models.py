@@ -13,6 +13,7 @@ class MultilingualUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('last name'), max_length=100)
     position = models.CharField(_('position'), max_length=100)
     image_id = models.ImageField(_('image id'), upload_to="multilingualuser/photos")
+    birthday = models.DateField(_('birthday'), null=True )
 
     objects = MultilingualUserManager()
 

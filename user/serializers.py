@@ -7,7 +7,7 @@ class MultilingualUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MultilingualUser
-        fields = ('username', 'first_name', 'last_name', 'position', 'image_id')
+        fields = ('username', 'first_name', 'last_name', 'position', 'image_id', 'birthday')
 
     def to_representation(self, user):
         user_dict = super().to_representation(user)
@@ -16,5 +16,6 @@ class MultilingualUserSerializer(serializers.ModelSerializer):
             _('first name'): user_dict['first_name'],
             _('last name'): user_dict['last_name'],
             _('position'): user_dict['position'],
-            _('image id'): user_dict['image_id']
+            _('image id'): user_dict['image_id'],
+            _('birthday'): user_dict['birthday']
         }
