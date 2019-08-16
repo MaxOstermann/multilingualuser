@@ -45,6 +45,7 @@ def logout_api(request):
     return Response("Выход выполнен.")
 
 
+@login_required
 @api_view(['GET'])
 def export_api(request):
     users_queryset = MultilingualUser.objects.all()
