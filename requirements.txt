@@ -1,5 +1,5 @@
 Choco==1.0.5
-Django==2.2.4
+Django==2.2.13
 django-cuser==2017.3.16
 django-filter==2.2.0
 django-parler==2.0
